@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cervical Cancer KBS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/style.css">
+
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mt-4">Cervical Cancer Knowledge-Based System</h1>
+        <p class="lead">Helping women understand risks, symptoms, and prevention.</p>
+        <!-- Impact Section -->
+        <div class="card p-4 mt-3">
+            <h2>Urgent Action Needed: Rising Cervical Cancer Cases in Kenya</h2>
+        <p>Kenya is facing a growing health crisis, with cervical cancer claiming nine lives daily. Despite being preventable through early screening and vaccination, thousands of women remain at risk. Increased awareness, improved healthcare access, and government-backed vaccination campaigns are key to reversing this trend.</p>
+        <a href="https://www.citizen.digital/news/kenya-grapples-with-rising-cervical-cancer-cases-losing-nine-women-daily-n356762" class="btn" target="_blank">Read More</a>
+        </div>
+        <h1>🩺 Cervical Cancer Screening System</h1>
+        <p>Answer the following questions to check your risk level.</p>
+    
+        <div class="quiz-container">
+            <form action="/" method="POST">
+                
+                <div class="question">Select your symptoms:</div>
+                <label><input type="checkbox" name="symptoms" value="abnormal vaginal bleeding"> Abnormal Vaginal Bleeding</label><br>
+                <label><input type="checkbox" name="symptoms" value="pelvic pain"> Pelvic Pain</label><br>
+                <label><input type="checkbox" name="symptoms" value="pain during intercourse"> Pain During Intercourse</label><br>
+                <label><input type="checkbox" name="symptoms" value="unusual vaginal discharge"> Unusual Vaginal Discharge</label><br>
+                <label><input type="checkbox" name="symptoms" value="lower back pain"> Lower Back Pain</label><br>
+                <label><input type="checkbox" name="symptoms" value="fatigue"> Fatigue</label><br>
+                <label><input type="checkbox" name="symptoms" value="weight loss"> Weight Loss</label><br>
+                <label><input type="checkbox" name="symptoms" value="swelling in legs"> Swelling in Legs</label><br>
+    
+                <div class="question">Select your age group:</div>
+                <label><input type="radio" name="age_group" value="below 40" required> Below 40</label><br>
+                <label><input type="radio" name="age_group" value="40+"> 40+</label><br>
+    
+                <div class="question">Have you received an HPV vaccine?</div>
+                <label><input type="radio" name="vaccination" value="yes" required> Yes</label><br>
+                <label><input type="radio" name="vaccination" value="no"> No</label><br>
+    
+                <div class="question">Have you had multiple sexual partners?</div>
+                <label><input type="radio" name="partners" value="yes" required> Yes</label><br>
+                <label><input type="radio" name="partners" value="no"> No</label><br>
+    
+                <div class="question">Do you have a family history of cervical cancer?</div>
+                <label><input type="radio" name="family_history" value="yes" required> Yes</label><br>
+                <label><input type="radio" name="family_history" value="no"> No</label><br>
+    
+                <button type="submit" class="submit-btn">Check My Risk</button>
+            </form>
+    
+            {% if diagnosis %}
+                <div class="result">{{ diagnosis }}</div>
+            {% endif %}
+        </div>
+
+        <h2>Cervical Cancer Risk Assessment</h2>
+        <form method="POST">
+            <label><input type="checkbox" name="symptoms" value="abnormal_vaginal_bleeding"> Abnormal Vaginal Bleeding</label><br>
+            <label><input type="checkbox" name="symptoms" value="pelvic_pain"> Pelvic Pain</label><br>
+            <label><input type="checkbox" name="symptoms" value="hpv_infection"> HPV Infection</label><br>
+            <label><input type="checkbox" name="symptoms" value="unusual_discharge"> Unusual Vaginal Discharge</label><br>
+            <label><input type="checkbox" name="symptoms" value="fatigue"> Fatigue</label><br>
+            <label><input type="checkbox" name="symptoms" value="loss_of_appetite"> Loss of Appetite</label><br>
+            <br>
+            <button type="submit">Check Risk</button>
+        </form>
+    
+        {% if diagnosis %}
+            <h3>Diagnosis: {{ diagnosis }}</h3>
+        {% endif %}
+            
+        
+            <script>
+                document.getElementById("symptomForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    let selectedSymptom = document.getElementById("symptomsDropdown").value;
+                    let customSymptoms = document.getElementById("customSymptoms").value;
+                    
+                    let symptomsToSend = selectedSymptom ? selectedSymptom : customSymptoms;
+        
+                    if (!symptomsToSend.trim()) {
+                        alert("Please enter or select at least one symptom.");
+                        return;
+                    }
+        
+                    fetch("/diagnose", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ symptoms: symptomsToSend })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("resultText").innerText = data.diagnosis;
+                        document.getElementById("resultBox").style.display = "block";
+                    })
+                    .catch(error => console.error("Error:", error));
+                });
+            </script>
+        </div>
+        <!-- Awareness Section -->
+        <div class="card p-4 mt-3">
+            <h3>Prevention & Awareness</h3>
+            <p>Early screening and HPV vaccination for girls aged 14 can significantly reduce future cases.</p>
+        </div>
+        
+
+        
+
+
+</body>
+</html>

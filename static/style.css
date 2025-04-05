@@ -1,0 +1,153 @@
+/* General Page Styling */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1000px; /* Wider for better layout */
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Heading Styles */
+h1 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #d63384;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #555;
+}
+
+/* Two-Column Layout */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1;
+    min-width: 45%; /* Ensure side-by-side on wider screens */
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Form Styling */
+form {
+    background-color: #e9f5db; /* Softer green */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.checkbox-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1rem;
+    display: block;
+    margin: 8px 0;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Button Styling */
+.submit-btn {
+    background-color: #d63384;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    width: 100%;
+}
+
+.submit-btn:hover {
+    background-color: #b72c6b;
+}
+
+/* Diagnosis Result Styling */
+.result-box {
+    display: none;
+    background-color: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 30px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.result-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .flex-item {
+        min-width: 100%; /* Stack on smaller screens */
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
