@@ -58,7 +58,6 @@ Here are some screenshots showcasing the key features of the **Smart Meal Planne
 
 ### 1. **Homepage** 🏠
 ![image](https://github.com/user-attachments/assets/b1647302-ecf8-4104-8c60-d685a6da8448)
-![image](https://github.com/user-attachments/assets/93472736-105b-448c-a0e0-da28c99d9f76)
 ![image](https://github.com/user-attachments/assets/842b89ff-55ff-47db-9eea-35ab7b3ed88e)
 ![image](https://github.com/user-attachments/assets/ff974ca6-50b6-4467-8118-c3283b8c09df)
 
