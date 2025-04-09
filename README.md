@@ -51,6 +51,18 @@ This kind of tool empowers frontline workers and educates women before it’s to
 - 🌍 **Offline-Ready Architecture:** No cloud dependency—works in low-resource settings.
 
 ---
+---
+## Screenshots 📸
+
+Here are some screenshots showcasing the key features of the **Smart Meal Planner** app:
+
+### 1. **Homepage** 🏠
+![image](https://github.com/user-attachments/assets/b1647302-ecf8-4104-8c60-d685a6da8448)
+![image](https://github.com/user-attachments/assets/a03f14e4-1a74-4c40-8ffa-1694db517773)
+![image](https://github.com/user-attachments/assets/93472736-105b-448c-a0e0-da28c99d9f76)
+![image](https://github.com/user-attachments/assets/cc975109-03a4-4fc3-acec-9df185b1e8fb)
+![image](https://github.com/user-attachments/assets/189307af-ea85-484e-8952-a2523bfa6664)
+![image](https://github.com/user-attachments/assets/33d469ca-c882-4824-b55a-e9e66b38d20e)
 
 ## 🗂️ Project Structure
 
